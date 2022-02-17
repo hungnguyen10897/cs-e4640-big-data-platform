@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+
+  producer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./data/:/app/data/
+    network_mode: host
+    deploy:
+      replicas: 2
