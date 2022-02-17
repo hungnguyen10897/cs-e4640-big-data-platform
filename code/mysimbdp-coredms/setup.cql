@@ -1,6 +1,6 @@
 DROP KEYSPACE IF EXISTS mysimpbdp;
 
-CREATE KEYSPACE mysimpbdp WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+CREATE KEYSPACE mysimpbdp WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3};
 
 USE mysimpbdp;
 

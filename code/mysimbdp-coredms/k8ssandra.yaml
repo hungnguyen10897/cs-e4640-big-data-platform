@@ -18,7 +18,7 @@ cassandra:
       memory: 2Gi
   datacenters:
   - name: dc1
-    size: 1
+    size: 3
     racks:
     - name: default
 kube-prometheus-stack:
