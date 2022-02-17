@@ -1,4 +1,7 @@
 #!/bin/bash
 
-kubectl create namespace dataingest
+# To run producer, consumer locally
+export CASSANDRA_HOST="localhost"
 
+# To run from docker-compose
+docker-compose up --build
