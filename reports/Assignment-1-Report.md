@@ -77,8 +77,8 @@ smaller than the number of nodes.
 
 Scaling would be extremely straightforward when using K8ssandra on Kubernetes. This can be done either vertically or horizontally:
 
-- Vertical Scaling: Increase `resources.requests` and `resouces.limits` under [k8ssandra values](../code/mysimpdbp-coredms/k8ssandra.yaml)
-- Horizontal Scaling: Add nodes/workers to the Kubernetes Cluster and then increase `datacenters.size` under [k8ssandra values](../code/mysimpdbp-coredms/k8ssandra.yaml)
+- Vertical Scaling: Increase `resources.requests` and `resouces.limits` under [k8ssandra values](../code/mysimdbp-coredms/k8ssandra.yaml)
+- Horizontal Scaling: Add nodes/workers to the Kubernetes Cluster and then increase `datacenters.size` under [k8ssandra values](../code/mysimdbp-coredms/k8ssandra.yaml)
 
 <br>
 <br>
@@ -90,7 +90,7 @@ Scaling would be extremely straightforward when using K8ssandra on Kubernetes. T
 **1. Design, implement and explain one example of the data schema/structure for a tenant whose data will be stored into *mysimbdp-coredms* (1 point)**
  
 Tenant can create their own `KEYSPACE` (database), `Column Family` (Table) with defined schema into Cassandra. All of this can be defined in a `.cql` file and 
-execute via `cqlsh`. A sample can be found under [setup.cql](../code/mysimpdbp-coredms/setup.cql)
+execute via `cqlsh`. A sample can be found under [setup.cql](../code/mysimdbp-coredms/setup.cql)
 
 **2. Given the data schema/structure of the tenant (Part 2, Point 1), design a strategy for data partitioning/sharding and explain your implementation 
 for data partitioning/sharding together with your design for replication in Part 1, Point 4, in *mysimbdpcoredms* (1 point)**
@@ -100,7 +100,7 @@ of `PARTITION_KEY` (which node the data goes to) and `CLUSTERING_COLUMNS` (how d
 only filtered by 1 specific product (`product_id`). Thus, I choose `product_id` to be the `PARTITION_KEY`. Together with `replication = {'class': 'SimpleStrategy', 'replication_factor': 3}`,
 data, after partitioned to a node, will be replicated to the next 2 nodes in the cluster in clock-wise order.
 
-All of these are defined in [setup.cql](../code/mysimpdbp-coredms/setup.cql) file.
+All of these are defined in [setup.cql](../code/mysimdbp-coredms/setup.cql) file.
 
 **3. Assume that you are the tenant, write a *mysimbdp-dataingest* that takes data from your selected sources and stores the data into *mysimbdp-coredms*. 
 Explain possible consistency options for writing data in your mysimdbp-dataingest (1 point)**

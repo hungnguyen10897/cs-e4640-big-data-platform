@@ -3,7 +3,7 @@
 
 # Start a new cluster
 minikube start \
--p mysimpbdp \
+-p mysimbdp \
 --kubernetes-version=v1.20.7 \
 --memory=5g \
 --nodes=2 \

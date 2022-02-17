@@ -1,8 +1,8 @@
-DROP KEYSPACE IF EXISTS mysimpbdp;
+DROP KEYSPACE IF EXISTS mysimbdp;
 
-CREATE KEYSPACE mysimpbdp WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3};
+CREATE KEYSPACE mysimbdp WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3};
 
-USE mysimpbdp;
+USE mysimbdp;
 
 CREATE TABLE reviews (
   marketplace TEXT,

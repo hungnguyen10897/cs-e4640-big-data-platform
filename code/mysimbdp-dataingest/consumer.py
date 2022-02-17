@@ -12,7 +12,7 @@ if __name__ == "__main__":
     cluster = Cluster([os.environ["CASSANDRA_HOST"]],auth_provider = auth_provider)
     session = cluster.connect()
 
-    session.execute('USE mysimpbdp;')
+    session.execute('USE mysimbdp;')
     rows = session.execute("SELECT * FROM reviews WHERE marketplace = 'US'")
     for row in rows:
         print(row.product_id,row.marketplace,row.review_body)

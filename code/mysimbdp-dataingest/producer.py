@@ -12,7 +12,7 @@ if __name__ == "__main__":
     auth_provider = PlainTextAuthProvider(username='k8ssandra-superuser', password='ju82V79VmZW9UzUdGZO7')
     cluster = Cluster([CASSANDRA_HOST],auth_provider = auth_provider)
     session = cluster.connect()
-    session.execute("USE mysimpbdp")
+    session.execute("USE mysimbdp")
 
     COLUMNS_PLACEHOLDERS = ', '.join(REVIEWS_COLUMNS)
     VALUES_PLACEHOLDERS = ', '.join(len(REVIEWS_COLUMNS) * ["?"])
