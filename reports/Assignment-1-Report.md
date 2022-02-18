@@ -106,7 +106,8 @@ All of these are defined in [setup.cql](../code/mysimdbp-coredms/setup.cql) file
 Explain possible consistency options for writing data in your mysimdbp-dataingest (1 point)**
 
 
-A script for *mysimbdp-dataingest* can be found [here]()
+A sample script for *mysimbdp-dataingest* can be found [here](../code/mysimbdp-dataingest/producer.py). The script reads some sample data stored at `/code/mysimbdp-dataingest/data/` 
+and write to the default Keyspace on Cassandra. 
 
 
 **4. Given your deployment environment, show the performance (response time and failure) of the tests for 1,5, 10, .., n of concurrent *mysimbdp-dataingest* 
@@ -125,25 +126,64 @@ such problems (or explain why you do not have any problem with your deployment) 
 support the tenant to manage metadata about the databases/datasets, what would be your solution? (1 point)
 **
 
+We can have a metadata table stored directly in the Keyspace with the following schema:
+
+```
+USE mysimbdp;
+
+CREATE TABLE metadata (
+  table_name TEXT,
+  organization TEXT,
+  table_schema MAP<TEXT,TEXT>,
+  description TEXT,
+  creator_id UUID,
+  created_at TIMESTAMP,
+  last_updated_at TIMESTAMP,
+  PRIMARY KEY (table_name)
+);
+```
+
+Users can easily extract data about related tables within the scope of a tenant/organization.
 
 
 **2. Assume that each of your tenants/users will need a dedicated *mysimbdp-coredms*. Design the data schema of service
 information for *mysimbdp-coredms* that can be published into an existing registry (like ZooKeeper, consul or etcd) so that
 you can find information about which *mysimbdp-coredms* is for which tenants/users (1 point)**
 
+Data Schema of Service Information:
 
+```
+host_address TEXT         # IP Address where the *mysimbdp-coredms* for the tenant can be reached
+keyspace_name TEXT        # Name of Keyspace, different tenants can share the same *mysimbdp-coredms*
+tenant_id UUID            # Tenant ID owning the combination of host_address and keyspace_name
+tenant_name TEXT          # Alternative name of the tenant
+tenant_description TEXT   # General description
+```
 
 
 **3. Explain how you would change the implementation of *mysimbdp-dataingest* (in Part 2) to integrate a service discovery
 feature (no implementation is required) (1 point)**
 
+**mysimbdp-dataingest**, instead of going directly to the host address of the Cassandra cluster hosting `mysimbdp` coredms service 
+and authenticate against it, will query available services using the service discovery feature to extract information about the wanted
+service first, like its addrsess, keyspace name. Only after that, it reaches the end service.
 
 
 **4. Assume that now only *mysimbdp-daas* can read and write data into *mysimbdp-coredms*, how would you change your
 *mysimbdp-dataingest* (in Part 2) to work with *mysimbdp-daas*? (1 point)**
 
 
+**mysimbdp-dataingest** will point to **mysimbdp-daas** APIs and authenticates against it instead of authenticating directly to
+**mysimbdp-coredms**. There would be fine-grained access control at **mysimbdp-daas**, it can define only a set of READ/WRITE operations
+that clients can perform, exposing those as REST APIs taking parameters to prepare and run CQL Query. **mysimbdp-dataingest** has to 
+call REST APIs of **mysimbdp-daas** rather than performing whatever it wants at **mysimbdp-coredms**.
 
-**5. Assume that you design APIs for *mysimbdp-daa*s so that any other developer who wants to implement *mysimbdpdatainges*t can 
+
+
+**5. Assume that you design APIs for *mysimbdp-daas* so that any other developer who wants to implement *mysimbdpdataingest* can 
 write his/her own ingestion program to write the data into *mysimbdp-coredms* by calling *mysimbdp-daas*.
 Explain how would you control the data volume and speed in writing and reading operations for a tenant? (1 point)**
+
+**mysimbdp-daas** can enforce compulsory `parameters` regarding READ/WRITE volume and speed or having a reasonable default 
+value. For volume, clients can only READ/WRITE, for instance, 1GB of data per request. At the same time for speed, clients can only send
+10 requests per minute.
