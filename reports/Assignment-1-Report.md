@@ -143,8 +143,25 @@ must respond to a read/write operation for the operation to succeed. For a three
 writing data into *mysimbdp-coredms* with different speeds/velocities together with the change of the number of nodes of *mysimbdp-coredms*. Indicate any performance 
 differences due to the choice of consistency options (1 point)**
 
+Write Request throughput:
 
 
+![Request Throughput](./images/rt.png)
+
+
+Write Latency:
+
+![Write Latency](./images/latency.png)
+
+
+<br>
+
+Although the through put increase by 2-2.5 times, latency only increases by about 1.5 times. Due to limitations of, computing resources and time, 
+I didn't have time to test scaling of K8ssandra to handle the workload.
+
+
+<br>
+<br>
 
 **5. Observing the performance and failure problems when you push a lot of data into *mysimbdp-coredms* 
 (you do not need to worry about duplicated data in *mysimbdp*), propose the change of your deployment to avoid 
