@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY requirements.txt .
 COPY producer.py .
+COPY model.py .
 COPY credentials.cfg .
 
 ENV CASSANDRA_HOST="host.docker.internal"

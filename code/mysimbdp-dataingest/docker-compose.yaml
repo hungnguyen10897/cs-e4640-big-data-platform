@@ -10,4 +10,4 @@ services:
       - ./data/:/app/data/
     network_mode: host
     deploy:
-      replicas: 2
+      replicas: 5

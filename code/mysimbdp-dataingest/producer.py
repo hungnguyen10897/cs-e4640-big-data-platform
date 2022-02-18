@@ -1,8 +1,11 @@
 import os, configparser
 from pathlib import Path
 
-from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
+from cassandra.cluster import Cluster, ExecutionProfile, EXEC_PROFILE_DEFAULT
+from cassandra.policies import WhiteListRoundRobinPolicy, DowngradingConsistencyRetryPolicy
+from cassandra.query import tuple_factory
+from cassandra import ConsistencyLevel
 
 from model import REVIEWS_COLUMNS, REVIEWS_DTYPES
 
@@ -42,7 +45,15 @@ if __name__ == "__main__":
     cassandra_password = config.get("CASSANDRA","password")
 
     auth_provider = PlainTextAuthProvider(username=cassandra_username, password=cassandra_password)
-    cluster = Cluster([CASSANDRA_HOST],auth_provider = auth_provider)
+
+    # profile = ExecutionProfile(
+    #     load_balancing_policy=WhiteListRoundRobinPolicy(['0.0.0.0']),
+    #     consistency_level= ConsistencyLevel.LOCAL_QUORUM
+    # )
+
+    # cluster = Cluster(execution_profiles={EXEC_PROFILE_DEFAULT: profile}, auth_provider = auth_provider)
+
+    cluster = Cluster([CASSANDRA_HOST], auth_provider=auth_provider)
     session = cluster.connect()
     session.execute("USE mysimbdp")
 

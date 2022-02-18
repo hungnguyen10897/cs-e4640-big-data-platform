@@ -6,6 +6,8 @@
 - Helm v3
 - Bash terminal
 
+<br>
+
 ## Step 1: Setting Up Minikube cluster (optional)
 
 This step is optional if you already have a Kubernetes cluster
@@ -14,11 +16,13 @@ This step is optional if you already have a Kubernetes cluster
 minikube start \
 -p mysimbdp \
 --kubernetes-version=v1.20.7 \
---memory=3g \
+--memory=5g \
 --nodes=3 \
 --cpus=4 \
 --disk-size=10g
 ```
+
+<br>
 
 ## Step 2: Install K8ssandra on Kubernetes and Set up Cassandra
 
@@ -57,6 +61,8 @@ Port-forward Grafana to localhost
 kubectl port-forward -n coredms svc/k8ssandra-grafana 9090:80
 ```
 
+<br>
+
 ## Step 3: Get Canssandra credentials
 
 Username
@@ -72,7 +78,9 @@ kubectl get secret k8ssandra-superuser -n coredms -o jsonpath="{.data.password}"
 
 Change configurations under [credentials.cfg file](/code/mysimbdp-dataingest/credentials.cfg) with these values.
 
-## Step 5: Set up initial Keyspace and Table
+<br>
+
+## Step 4: Set up initial Keyspace and Table
 
 At `/code/mysimbdp-coredms`, replace <USERNAME> and <PASSWORD> and run
 
@@ -80,7 +88,9 @@ At `/code/mysimbdp-coredms`, replace <USERNAME> and <PASSWORD> and run
 ./cqlsh-astra/bin/cqlsh  -u <USERNAME> -p <PASSWORD> -f setup.cql
 ```
 
-## Step 4: Run *mysimbdp-dataingest* service
+<br>
+
+## Step 5: Run *mysimbdp-dataingest* service
 
 First configure the number of concurrent producers to run by changing the [dokcer-compose.yaml file](/code/mysimbdp-dataingest/docker-compose.yaml)
 
@@ -94,7 +104,9 @@ At `/code/mysimbdp-dataingest`, run
 docker-compose up
 ```
 
-## Step 5: Clean Up
+<br>
+
+## Step 6: Clean Up
 
 Simple delete the minikube cluster
 
