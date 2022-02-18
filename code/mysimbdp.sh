@@ -5,10 +5,13 @@
 minikube start \
 -p mysimbdp \
 --kubernetes-version=v1.20.7 \
---memory=5g \
---nodes=2 \
+--memory=3g \
+--nodes=3 \
 --cpus=4 \
 --disk-size=10g
+
+# Delete cluster
+minikube delete -p mysimbdp
 
 # Check and install appropriate storage class
 kubectl get storageclasses
