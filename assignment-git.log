@@ -1,2 +1,196 @@
-the content of this file should be the output of the log of your own git project for this assignment
-using git log command to export your git log
+commit 257d0ae524ba953729457c28c66bed1485d48b19
+Author: Hung Nguyen <hungnguyen10897@gmail.com>
+Date:   Fri Feb 18 12:48:45 2022 +0200
+
+    Add images
+
+commit ff52687a393c527aeff38b0edb5aa331d0077e93
+Author: Hung Nguyen <hungnguyen10897@gmail.com>
+Date:   Fri Feb 18 12:48:36 2022 +0200
+
+    Finish reports
+
+commit d0bc8c817af693b9af6ac0259a301f3a2a1ebd1c
+Author: Hung Nguyen <hungnguyen10897@gmail.com>
+Date:   Fri Feb 18 12:42:50 2022 +0200
+
+    Update reports, Finalize configs for components
+
+commit 027b0e0227634eb9dc175c4a11a34ac0353097f4
+Author: Hung Nguyen <hungnguyen10897@gmail.com>
+Date:   Fri Feb 18 11:10:57 2022 +0200
+
+    Improve passing credentials to producer processes
+
+commit d8ec9929f3366953130bce18e8694b22749a4fa0
+Author: Hung Nguyen <hungnguyen10897@gmail.com>
+Date:   Fri Feb 18 11:10:21 2022 +0200
+
+    Update Deployment report
+
+commit c118896c59a112d733670a8e277a443db303bb7a
+Author: Hung Nguyen <hungnguyen10897@gmail.com>
+Date:   Fri Feb 18 10:15:23 2022 +0200
+
+    Update Part-3 of Assignment Doc
+
+commit afa4dc5a554f626bb3c334e245051ee94ec05423
+Author: Hung Nguyen <hungnguyen10897@gmail.com>
+Date:   Thu Feb 17 20:12:37 2022 +0200
+
+    Refactor all 'mysimpbdp' into 'mysimbdp'
+
+commit 217b5de5bdbabca166b9e2ed0f88459cda32379b
+Author: Hung Nguyen <hungnguyen10897@gmail.com>
+Date:   Thu Feb 17 20:09:41 2022 +0200
+
+    Rename components, scale out k8ssandra, increase replication_factor for table, add data for producer
+
+commit d41fdba5c9906584fb6449fecd81e5581054969d
+Author: Hung Nguyen <hungnguyen10897@gmail.com>
+Date:   Thu Feb 17 20:07:04 2022 +0200
+
+    Finish Part 1 of Report
+
+commit 1c70b0555e56c938d314a060cb286b0d4cb5a71c
+Author: Hung Nguyen <hungnguyen10897@gmail.com>
+Date:   Thu Feb 17 18:10:34 2022 +0200
+
+    Rename mysimbdp to mysimpbdp
+
+commit bf9724f4dbb85b2e12dffb42374de9e8283ea9ab
+Author: Hung Nguyen <hungnguyen10897@gmail.com>
+Date:   Thu Feb 17 13:56:34 2022 +0200
+
+    Add bash command to port-forward and access Grafana for monitoring
+
+commit b71a0f6655b76b07f44cb38003f4e3cc24e8938d
+Author: Hung Nguyen <hungnguyen10897@gmail.com>
+Date:   Thu Feb 17 13:45:12 2022 +0200
+
+    Draft basic functionality of producer, initial functionality for consumer
+
+commit 9a47e7feadc3f9043fb782023baa4d3a708e7c7c
+Author: Hung Nguyen <hungnguyen10897@gmail.com>
+Date:   Thu Feb 17 12:22:48 2022 +0200
+
+    Add setup script for coredms
+
+commit 95fad7da493707d24daff1c196fdcf570fe32df6
+Author: Hung Nguyen <hungnguyen10897@gmail.com>
+Date:   Thu Feb 17 09:55:55 2022 +0200
+
+    Configure started minikube cluster
+
+commit 2a0bfb91f8c1901d91fe5adce0a3bfc1c48e4583
+Author: Hung Nguyen <hungnguyen10897@gmail.com>
+Date:   Thu Feb 17 09:55:29 2022 +0200
+
+    Bash commands to run producer
+
+commit 9ef8735e47898211608e545d4825458cf95acc25
+Author: Hung Nguyen <hungnguyen10897@gmail.com>
+Date:   Thu Feb 17 09:55:03 2022 +0200
+
+    Setup Basic Infra for producers
+
+commit 811570f38bafd2cece083e341eafe79cf5616c69
+Author: Hung Nguyen <hungnguyen10897@gmail.com>
+Date:   Tue Feb 15 22:00:36 2022 +0200
+
+    General setup for Kubernetes and K8ssandra
+
+commit 3533448b777439bb1200bea55b321f938bb22324
+Author: Linh Truong <linh.truong@aalto.fi>
+Date:   Wed Feb 2 11:31:27 2022 +0200
+
+    Update AssignmentGuideline.md
+
+commit fbc285b9d2a23af0a0cc6ecd40a601a9bdc4e870
+Merge: 363a3e3 f4a262f
+Author: Linh Truong <linh.truong@aalto.fi>
+Date:   Wed Feb 2 11:29:42 2022 +0200
+
+    Merge branch 'tri_recommend' into 'master'
+    
+    Update AssignmentGuideline.md
+    
+    See merge request bigdataplatforms/assignment-nr-studentid!2
+
+commit f4a262fcc36046dc6b4120590e20893c24c15acc
+Author: Nguyen Tri <tri.m.nguyen@aalto.fi>
+Date:   Wed Feb 2 11:28:15 2022 +0200
+
+    Update AssignmentGuideline.md
+
+commit 363a3e340b538fc4649880fcd37ffb98eb7cf4fa
+Author: linhsolar <linh.truong@aalto.fi>
+Date:   Mon Jan 4 09:59:16 2021 +0200
+
+    minor update of git links
+
+commit 3fb384fdde63ef8b838e2f2db3d4d0e0bcb7985b
+Author: linhsolar <linh.truong@aalto.fi>
+Date:   Fri Dec 18 12:37:51 2020 +0200
+
+    update info about violation
+
+commit 39a01dc46df38db9e0e42af6990fff645025121d
+Author: linhsolar <linh.truong@aalto.fi>
+Date:   Sat Dec 12 19:03:34 2020 +0200
+
+    update assignment guide
+
+commit 0bfe8640dd6e4e2f12ef18ebb7f1cef6d7d65745
+Author: linhsolar <linh.truong@aalto.fi>
+Date:   Fri Jul 24 16:04:27 2020 +0300
+
+    update the template - remove redundant files
+
+commit 09e04b6bd6e03aa114452057682f1b4846ca2db9
+Author: linhsolar <linh.truong@aalto.fi>
+Date:   Mon Oct 7 10:47:36 2019 +0300
+
+    just add empty, free form report files
+
+commit 3a9bfe90cbfb04f7aedc98f8b20df4524a45bc13
+Author: linhsolar <linh.truong@aalto.fi>
+Date:   Wed Sep 18 21:43:48 2019 +0300
+
+    update guideline w.r.t. logs from the git
+
+commit 2339a00270b3d4d23c7f7f2b738f5a7f9aa2c3a2
+Author: linhsolar <linh.truong@aalto.fi>
+Date:   Sun Sep 8 22:27:02 2019 +0300
+
+    update guide
+
+commit 9e8bd269fccdccd2edd7059765afc2f9e2f80c79
+Author: linhsolar <linh.truong@aalto.fi>
+Date:   Sun Sep 8 13:29:13 2019 +0300
+
+    update a bit the guide
+
+commit 5423f13164c1637f17e247c415a8590cfdfd468e
+Author: linhsolar <linh.truong@aalto.fi>
+Date:   Sun Sep 8 13:27:06 2019 +0300
+
+    add new templates
+
+commit d89f35ba5a4d18feccfc78e29e3dd35b70fc92ef
+Author: linhsolar <linh.truong@aalto.fi>
+Date:   Thu Sep 5 21:12:48 2019 +0300
+
+    update guideline
+
+commit 8354163f0cbbf301e550ef7090d4fa86f9059b99
+Author: linhsolar <linh.truong@aalto.fi>
+Date:   Thu Sep 5 21:11:02 2019 +0300
+
+    add template/guideline
+
+commit 7e0b9fbc36f51902e9bd21f2bb97bfdd924b0edd
+Author: Linh Truong <linh.truong@aalto.fi>
+Date:   Thu Sep 5 17:19:38 2019 +0300
+
+    Initial commit
